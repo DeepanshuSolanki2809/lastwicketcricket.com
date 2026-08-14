@@ -50,6 +50,45 @@
     background-image: repeating-linear-gradient(0deg, #fff 0px, #fff 1px, transparent 1px, transparent 3px);
   }
 
+<div class="lw-grain" aria-hidden="true"></div>
+<a class="lw-skip-link" href="#main">Skip to content</a>
+
+<header>
+  <nav class="lw-nav" aria-label="Primary">
+    <div class="lw-nav-inner">
+      <a class="lw-logo" href="#top" aria-label="LAST Wicket Cricket — home">
+        <span>LAST</span><em>WICKET</em>
+      </a>
+
+      <div class="lw-nav-links">
+        <a href="#content">Videos</a>
+        <a href="#play">Play</a>
+        <a href="#play-the-pitch">Quiz</a>
+        <a href="#challenge">Challenges</a>
+        <a href="#about">About</a>
+        <a href="#support">Support</a>
+      </div>
+
+      <a class="lw-btn lw-btn-primary lw-btn--sm lw-nav-cta" href="pages/play.html">Play now</a>
+
+      <button class="lw-nav-toggle" type="button" aria-expanded="false" aria-controls="lwMobileMenu" aria-label="Open menu">
+        <svg class="lw-icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="lw-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="lw-mobile-menu" id="lwMobileMenu">
+    <a href="#content">Videos</a>
+    <a href="#play">Play</a>
+    <a href="#play-the-pitch">Quiz</a>
+    <a href="#challenge">Challenges</a>
+    <a href="#about">About</a>
+    <a href="#support">Support</a>
+    <a class="lw-btn lw-btn-primary" href="pages/play.html">Play now</a>
+  </div>
+</header>
+  
   /* ---------- HERO ---------- */
   .lw-hero{
     position:relative;
@@ -371,9 +410,12 @@
         <p class="lw-support-sub">Goes straight to the bank. No platform, no cut.</p>
 
         <div class="lw-amount-chips" role="group" aria-label="Choose a tip amount">
-          <button type="button" class="lw-chip" data-amount="21">A Single · ₹21</button>
-          <button type="button" class="lw-chip is-active" data-amount="51">A Boundary · ₹51</button>
-          <button type="button" class="lw-chip" data-amount="101">A Six · ₹101</button>
+          <button type="button" class="lw-chip" data-amount="21">A Single 1· ₹21</button>
+          <button type="button" class="lw-chip is-active" data-amount="51">A Double 2· ₹51</button>
+          <button type="button" class="lw-chip" data-amount="101">A Triple 3 · ₹101</button>
+          <button type="button" class="lw-chip" data-amount="251">A Four 4 · ₹251</button>
+          <button type="button" class="lw-chip" data-amount="501">A Six 6 · ₹501</button>
+          <button type="button" class="lw-chip" data-amount="1100">A Wicket · ₹1100</button>
           <button type="button" class="lw-chip" data-amount="custom">Custom</button>
         </div>
         <input type="number" id="lwCustomAmount" class="lw-custom-amount" min="1" placeholder="Enter an amount (₹)" hidden>
