@@ -1,0 +1,60 @@
+/* ==========================================================================
+   LAST WICKET CRICKET — Design Tokens
+   Phase 2.1 — Product Foundation
+
+   Every color, font and radius used across the site is declared once here.
+   Components should reference these variables, not raw values, so future
+   phases (game UI, profiles, store) inherit the same identity automatically.
+   ========================================================================== */
+
+:root{
+  /* ---- surfaces (dark navy stack, darkest to lightest) ---- */
+  --bg:        #0A0F1C;
+  --surface:   #101A2E;
+  --surface-2: #16233C;
+
+  /* ---- text ---- */
+  --text:      #EDEFF3;
+  --muted:     #9AA3B8;
+  --muted-2:   #7A83AC; /* lightened from initial draft to clear 4.5:1 AA on both --bg and --surface */
+
+  /* ---- brand accent (amber) ---- */
+  --accent:      #F2C14E;
+  --accent-dim:  #C79A34;
+  --on-accent:   #1A1300; /* text color placed on top of --accent */
+
+  /* ---- cricket-thematic secondary colors ---- */
+  --pitch: #5C9450; /* grass green — used for "live" / positive states; lightened from initial draft for AA contrast */
+  --ball:  #B3402A; /* leather red — reserved, not yet used. Earmarked for
+                        game-UI moments (e.g. "wicket down") in Phase 2.2+ */
+
+  /* ---- semantic status ---- */
+  --success: #5C9A52;
+  --danger:  #E2604B;
+
+  /* ---- structure ---- */
+  --border: rgba(237, 239, 243, 0.09);
+  --border-strong: rgba(237, 239, 243, 0.16);
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 18px;
+
+  /* ---- elevation ---- */
+  --shadow-card: 0 20px 40px -20px rgba(0,0,0,0.6);
+  --shadow-accent: 0 10px 24px -10px rgba(242,193,78,0.5);
+
+  /* ---- type ---- */
+  --font-display: 'Anton', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+
+  /* ---- layout ---- */
+  --max-width: 1100px;
+  --max-width-narrow: 720px;
+  --nav-height: 64px;
+
+  /* ---- motion ---- */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration: 220ms;
+}

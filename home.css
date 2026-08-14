@@ -1,0 +1,129 @@
+/* ==========================================================================
+   LAST WICKET CRICKET — Home
+   Section-level composition for the homepage. Component styling lives in
+   components.css; this file only arranges sections and page-specific bits.
+   ========================================================================== */
+
+.lw-section{ padding: 90px 24px; }
+.lw-section + .lw-section{ border-top: 1px solid var(--border); }
+.lw-section--tight{ padding: 90px 24px 100px; }
+.lw-section--alt{ background: var(--surface); }
+
+/* ---------- HERO ---------- */
+.lw-hero{
+  position: relative;
+  overflow: hidden;
+  padding: 84px 0 76px;
+  background:
+    radial-gradient(ellipse 700px 420px at 12% -8%, rgba(242,193,78,0.16), transparent 60%),
+    radial-gradient(ellipse 600px 380px at 92% 0%, rgba(76,122,63,0.14), transparent 60%),
+    linear-gradient(180deg, var(--bg), var(--surface) 90%);
+  border-bottom: 1px solid var(--border);
+}
+.lw-hero-inner{ max-width: 780px; margin: 0 auto; padding: 0 24px; text-align: center; }
+.lw-hero-headline{
+  font-size: clamp(44px, 8.5vw, 84px);
+  line-height: 0.98;
+  letter-spacing: 0.01em;
+  margin: 0 0 20px;
+}
+.lw-hero-subhead{
+  font-size: 17px; color: var(--muted);
+  max-width: 560px; margin: 0 auto 32px;
+}
+
+.lw-scoreboard{
+  display: inline-flex; flex-direction: column; gap: 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 26px;
+  margin: 0 auto 36px;
+  box-shadow: 0 0 0 1px rgba(242,193,78,0.05), var(--shadow-card);
+}
+.lw-sb-row{ display: flex; justify-content: space-between; gap: 28px; font-family: var(--font-mono); font-size: 13px; }
+.lw-sb-label{ color: var(--muted-2); letter-spacing: 0.08em; }
+.lw-sb-value{ color: var(--accent); font-weight: 700; letter-spacing: 0.04em; }
+.lw-live{ display: inline-flex; align-items: center; gap: 7px; }
+
+.lw-hero-cta{ display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.lw-hero-links{ margin-top: 18px; font-size: 13.5px; color: var(--muted-2); }
+.lw-hero-links a{ color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+.lw-hero-links a:hover{ color: var(--accent); }
+
+/* ---------- PLAY (flagship feature) ---------- */
+.lw-play-intro{ max-width: 560px; margin: 0 auto 36px; text-align: center; }
+
+/* ---------- Today's Challenge ---------- */
+.lw-challenge-wrap{ max-width: 640px; margin: 0 auto; }
+
+/* ---------- Content hub ---------- */
+.lw-content-head{
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 20px;
+  flex-wrap: wrap; margin-bottom: 30px;
+}
+.lw-content-head .lw-section-title{ margin-bottom: 8px; }
+
+/* ---------- Pitch categories ---------- */
+.lw-pitch-lede{ text-align: center; max-width: 560px; margin: 0 auto 40px; }
+
+/* ---------- Play the Pitch ---------- */
+.lw-experiences-lede{ text-align: center; max-width: 560px; margin: 0 auto 40px; }
+
+/* ---------- Your Record ---------- */
+.lw-record-wrap{ max-width: 560px; margin: 0 auto; text-align: center; }
+.lw-record-copy{ color: var(--muted); font-size: 14.5px; margin: 0 0 30px; }
+
+/* ---------- About ---------- */
+.lw-about{ max-width: 640px; margin: 0 auto; }
+.lw-about p{ color: var(--muted); font-size: 15.5px; margin: 0 0 18px; }
+.lw-about p:last-child{ margin-bottom: 0; }
+.lw-about strong{ color: var(--text); font-weight: 600; }
+
+/* ---------- Message ---------- */
+.lw-message-inner{ max-width: 560px; margin: 0 auto; text-align: center; }
+.lw-message-inner .lw-eyebrow{ text-align: center; }
+.lw-message-inner .lw-section-title{ text-align: center; }
+.lw-message-copy{ color: var(--muted); font-size: 15px; margin: 0 0 40px; }
+.lw-form .lw-btn{ width: 100%; }
+
+/* ---------- Support ---------- */
+.lw-support-inner{ text-align: center; }
+.lw-support-inner .lw-eyebrow{ text-align: center; }
+.lw-support-inner .lw-section-title{ text-align: center; }
+.lw-support-copy{ color: var(--muted); font-size: 15px; margin: 0 auto 40px; max-width: 540px; }
+.lw-support-grid{ text-align: left; }
+.lw-support-card .lw-btn{ width: 100%; margin-top: 8px; }
+.lw-support-card .lw-btn + .lw-btn{ margin-top: 10px; }
+
+/* ---------- Footer ---------- */
+.lw-footer{
+  padding: 44px 24px 54px; text-align: center;
+  border-top: 1px solid var(--border);
+}
+.lw-footer-inner{ display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.lw-footer-brand{ font-family: var(--font-display); font-size: 15px; letter-spacing: 0.06em; color: var(--muted-2); margin: 0; }
+.lw-footer-links{ display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
+.lw-footer-links a{
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em;
+  color: var(--muted-2); text-decoration: none;
+}
+.lw-footer-links a:hover{ color: var(--accent); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 700px){
+  .lw-record-grid{ grid-template-columns: repeat(2, 1fr); }
+  .lw-challenge-stats{ grid-template-columns: 1fr; }
+  .lw-challenge-foot{ flex-direction: column; align-items: stretch; }
+  .lw-challenge-foot .lw-btn{ width: 100%; }
+}
+
+@media (max-width: 560px){
+  .lw-hero{ padding: 64px 0 52px; }
+  .lw-section{ padding: 60px 20px; }
+  .lw-section--tight{ padding: 60px 20px 70px; }
+  .lw-sb-row{ gap: 16px; }
+  .lw-feature{ padding: 30px 22px; }
+  .lw-challenge-card{ padding: 24px 20px; }
+  .lw-content-head{ flex-direction: column; align-items: flex-start; }
+}

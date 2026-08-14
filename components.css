@@ -1,0 +1,229 @@
+/* ==========================================================================
+   LAST WICKET CRICKET — Components
+   Reusable building blocks. Every future card (real videos, real games,
+   real leaderboard rows) should be able to reuse one of these patterns
+   instead of inventing new markup.
+   ========================================================================== */
+
+/* ---------- Generic surface card ---------- */
+.lw-card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 26px;
+  transition: transform var(--duration) var(--ease), border-color var(--duration) var(--ease);
+}
+.lw-card--hoverable:hover{ transform: translateY(-3px); border-color: rgba(242,193,78,0.35); }
+
+.lw-card-tag{
+  display: inline-block;
+  font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.12em;
+  color: var(--on-accent); background: var(--accent);
+  padding: 4px 10px; border-radius: 5px; margin-bottom: 16px;
+}
+.lw-card h3{ margin: 0 0 10px; font-size: 19px; }
+.lw-card p{ margin: 0; color: var(--muted); font-size: 14.5px; }
+
+/* Category pillar / content-category cards are clickable — whole card is a link */
+a.lw-card{ text-decoration: none; color: inherit; display: block; }
+a.lw-card:hover .lw-card-arrow{ transform: translateX(3px); }
+.lw-card-arrow{
+  display: inline-block; margin-top: 14px; color: var(--accent);
+  font-family: var(--font-mono); font-size: 12.5px;
+  transition: transform var(--duration-fast) var(--ease);
+}
+
+/* ---------- Grids ---------- */
+.lw-grid{ display: grid; gap: 20px; }
+.lw-grid--3{ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.lw-grid--4{ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.lw-grid--2{ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+/* ---------- Flagship feature card (PLAY section) ---------- */
+.lw-feature{
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(ellipse 500px 260px at 100% 0%, rgba(242,193,78,0.14), transparent 65%),
+    var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  display: grid; gap: 24px;
+}
+.lw-feature-body .lw-badge{ margin-bottom: 18px; }
+.lw-feature-title{
+  font-size: clamp(32px, 6vw, 48px);
+  line-height: 1;
+  margin: 0 0 12px;
+}
+.lw-feature-tagline{
+  font-family: var(--font-mono);
+  color: var(--accent-dim);
+  font-size: 14px; letter-spacing: 0.02em;
+  margin: 0 0 18px;
+}
+.lw-feature-copy{ color: var(--muted); font-size: 15px; max-width: 480px; margin: 0 0 26px; }
+.lw-feature-meta{
+  display: flex; flex-wrap: wrap; gap: 20px;
+  font-family: var(--font-mono); font-size: 12px; color: var(--muted-2);
+  margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--border);
+}
+.lw-feature-meta span{ color: var(--muted); }
+
+/* ---------- Today's Challenge ---------- */
+.lw-challenge-card{
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: grid; gap: 26px;
+}
+.lw-challenge-stats{
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  text-align: center;
+}
+.lw-challenge-stat{
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 10px;
+}
+.lw-challenge-stat-label{
+  display: block; font-family: var(--font-mono); font-size: 10.5px;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-2);
+  margin-bottom: 8px;
+}
+.lw-challenge-stat-value{
+  font-family: var(--font-display); font-size: clamp(24px, 5vw, 32px);
+  color: var(--accent);
+}
+.lw-challenge-foot{
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  flex-wrap: wrap;
+}
+.lw-challenge-note{ font-size: 13px; color: var(--muted-2); }
+
+/* ---------- Content hub cards ---------- */
+.lw-content-card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-decoration: none; color: inherit;
+  display: flex; flex-direction: column;
+  transition: transform var(--duration) var(--ease), border-color var(--duration) var(--ease);
+}
+.lw-content-card:hover{ transform: translateY(-3px); border-color: rgba(242,193,78,0.3); }
+.lw-content-thumb{
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background:
+    radial-gradient(ellipse 200px 140px at 30% 20%, rgba(242,193,78,0.18), transparent 60%),
+    linear-gradient(155deg, var(--surface-2), var(--bg));
+  display: flex; align-items: center; justify-content: center;
+}
+.lw-content-thumb svg{ width: 34px; height: 34px; color: var(--accent); opacity: 0.9; }
+.lw-content-body{ padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.lw-content-category{
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent-dim);
+}
+.lw-content-title{ font-family: var(--font-body); font-weight: 600; font-size: 15.5px; margin: 0; }
+.lw-content-meta{ font-size: 13px; color: var(--muted-2); margin-top: auto; padding-top: 8px; }
+
+/* ---------- Play the Pitch (future experiences) ---------- */
+.lw-experience-card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.lw-experience-head{ display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.lw-experience-card h3{ font-size: 17px; margin: 0; }
+.lw-experience-card p{ color: var(--muted); font-size: 14px; margin: 0; }
+
+/* ---------- Your Record (stat tiles) ---------- */
+.lw-record-grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.lw-record-tile{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  text-align: center;
+}
+.lw-record-value{
+  font-family: var(--font-display); font-size: clamp(26px, 5vw, 34px);
+  color: var(--text);
+}
+.lw-record-value--empty{ color: var(--muted-2); }
+.lw-record-label{
+  display: block; margin-top: 6px;
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted-2);
+}
+.lw-record-note{
+  grid-column: 1 / -1;
+  font-size: 13px; color: var(--muted); text-align: center;
+  padding-top: 6px;
+}
+
+/* ---------- Forms ---------- */
+.lw-form{ text-align: left; }
+.lw-field{ margin-bottom: 18px; }
+.lw-field label{
+  display: block; font-size: 13px; color: var(--muted); margin-bottom: 7px;
+  font-family: var(--font-mono); letter-spacing: 0.03em;
+}
+.lw-field input, .lw-field textarea{
+  width: 100%;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  resize: vertical;
+}
+.lw-field input:focus, .lw-field textarea:focus{ border-color: var(--accent-dim); }
+.lw-field textarea{ min-height: 110px; }
+.lw-field input::placeholder, .lw-field textarea::placeholder{ color: var(--muted-2); }
+.lw-honeypot{ position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.lw-form-status{
+  font-family: var(--font-mono); font-size: 13px; color: var(--accent);
+  min-height: 18px; margin: 14px 0 0; text-align: center;
+}
+.lw-form-status[data-state="error"]{ color: var(--danger); }
+.lw-form-status[data-state="success"]{ color: var(--success); }
+
+.lw-privacy-note{
+  margin: 26px 0 0; font-family: var(--font-mono); font-size: 12px;
+  color: var(--muted-2); text-align: center; line-height: 1.6;
+}
+
+/* ---------- Support / tipping ---------- */
+.lw-support-sub{ color: var(--muted); font-size: 14px; margin: 0 0 20px; }
+.lw-amount-chips{ display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.lw-chip{
+  background: var(--surface-2); border: 1px solid var(--border); color: var(--text);
+  font-family: var(--font-mono); font-size: 12.5px; padding: 8px 12px;
+  border-radius: 999px; cursor: pointer;
+  transition: border-color var(--duration-fast) var(--ease), color var(--duration-fast) var(--ease), background var(--duration-fast) var(--ease);
+}
+.lw-chip:hover{ border-color: var(--accent-dim); }
+.lw-chip.is-active{ background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 700; }
+
+.lw-custom-amount{
+  width: 100%; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 10px 12px; color: var(--text); font-size: 14px; margin-bottom: 14px;
+  font-family: var(--font-body);
+}
+
+.lw-qr-wrap{ margin-top: 18px; text-align: center; }
+.lw-qr-wrap img{
+  margin: 0 auto 10px; border-radius: var(--radius-sm); border: 1px solid var(--border);
+  background: #fff; padding: 8px; display: block;
+}
+.lw-qr-caption{ font-family: var(--font-mono); font-size: 11.5px; color: var(--muted-2); margin: 0; text-align: center; }

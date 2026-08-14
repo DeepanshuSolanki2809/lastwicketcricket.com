@@ -1,0 +1,68 @@
+/* ==========================================================================
+   LAST WICKET CRICKET — Coming Soon (pages/play.html)
+   Styles specific to placeholder/sub pages. Kept separate from home.css so
+   Phase 2.2 can replace this one file with real game styles without
+   touching the homepage.
+   ========================================================================== */
+
+.lw-comingsoon{
+  min-height: calc(100vh - var(--nav-height));
+  display: flex; align-items: center;
+  padding: 70px 24px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse 700px 420px at 50% -10%, rgba(242,193,78,0.14), transparent 60%),
+    linear-gradient(180deg, var(--bg), var(--surface) 120%);
+}
+
+.lw-comingsoon-inner{ max-width: 620px; margin: 0 auto; }
+
+.lw-comingsoon-title{
+  font-size: clamp(40px, 9vw, 76px);
+  line-height: 0.98;
+  margin: 18px 0 12px;
+}
+
+.lw-comingsoon-tagline{
+  font-family: var(--font-mono);
+  color: var(--accent-dim);
+  font-size: 14px;
+  margin: 0 0 22px;
+}
+
+.lw-comingsoon-copy{
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 480px;
+  margin: 0 auto 36px;
+}
+
+.lw-roadmap-list{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px;
+  display: grid; gap: 12px;
+  text-align: left;
+  max-width: 420px;
+  margin-left: auto; margin-right: auto;
+}
+.lw-roadmap-list li{
+  display: flex; gap: 10px; align-items: flex-start;
+  color: var(--muted); font-size: 14.5px;
+}
+.lw-roadmap-list li::before{
+  content: '✓'; color: var(--accent); font-weight: 700; flex: none;
+}
+
+.lw-comingsoon-actions{ display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+.lw-simple-header{
+  height: var(--nav-height);
+  display: flex; align-items: center;
+  border-bottom: 1px solid var(--border);
+  background: rgba(10, 15, 28, 0.92);
+}
+.lw-simple-header .lw-nav-inner{
+  width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}

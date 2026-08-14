@@ -1,0 +1,114 @@
+/* ==========================================================================
+   LAST WICKET CRICKET — Navigation
+   Sticky product nav. Desktop: horizontal bar. Mobile: full-panel menu.
+   No hover-dependent interactions — everything works on touch.
+   ========================================================================== */
+
+.lw-nav{
+  position: sticky; top: 0; z-index: 100;
+  height: var(--nav-height);
+  display: flex; align-items: center;
+  background: rgba(10, 15, 28, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--duration) var(--ease), background var(--duration) var(--ease);
+}
+.lw-nav.is-scrolled{
+  border-bottom-color: var(--border);
+  background: rgba(10, 15, 28, 0.92);
+}
+
+.lw-nav-inner{
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px;
+}
+
+.lw-logo{
+  display: inline-flex; align-items: baseline; gap: 6px;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 17px; letter-spacing: 0.03em;
+  color: var(--text);
+  white-space: nowrap;
+}
+.lw-logo em{
+  font-style: normal; color: var(--accent);
+}
+
+.lw-nav-links{
+  display: none;
+  align-items: center; gap: 4px;
+}
+.lw-nav-links a{
+  position: relative;
+  display: inline-flex; align-items: center;
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--muted);
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  transition: color var(--duration-fast) var(--ease), background var(--duration-fast) var(--ease);
+}
+.lw-nav-links a:hover{ color: var(--text); background: rgba(237,239,243,0.05); }
+.lw-nav-links a.is-active{ color: var(--accent); }
+.lw-nav-links a.is-active::after{
+  content: ''; position: absolute; left: 12px; right: 12px; bottom: 3px;
+  height: 2px; border-radius: 2px; background: var(--accent);
+}
+
+.lw-nav-cta{ display: none; }
+
+/* ---------- Mobile menu toggle ---------- */
+.lw-nav-toggle{
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px;
+  background: transparent; border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text); cursor: pointer;
+}
+.lw-nav-toggle svg{ width: 18px; height: 18px; }
+.lw-nav-toggle .lw-icon-close{ display: none; }
+.lw-nav-toggle[aria-expanded="true"] .lw-icon-open{ display: none; }
+.lw-nav-toggle[aria-expanded="true"] .lw-icon-close{ display: block; }
+
+.lw-mobile-menu{
+  position: fixed;
+  top: var(--nav-height); left: 0; right: 0; bottom: 0;
+  z-index: 99;
+  background: var(--bg);
+  padding: 12px 24px 40px;
+  display: flex; flex-direction: column;
+  overflow-y: auto;
+
+  transform: translateY(-8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--duration) var(--ease), transform var(--duration) var(--ease), visibility 0s linear var(--duration);
+}
+.lw-mobile-menu.is-open{
+  opacity: 1; transform: translateY(0); visibility: visible;
+  transition: opacity var(--duration) var(--ease), transform var(--duration) var(--ease);
+}
+
+.lw-mobile-menu a{
+  display: flex; align-items: center; justify-content: space-between;
+  text-decoration: none; color: var(--text);
+  font-family: var(--font-display); font-size: 24px;
+  padding: 16px 4px;
+  border-bottom: 1px solid var(--border);
+}
+.lw-mobile-menu a.is-active{ color: var(--accent); }
+.lw-mobile-menu .lw-btn{ margin-top: 24px; }
+
+@media (min-width: 860px){
+  .lw-nav-links{ display: flex; }
+  .lw-nav-cta{ display: inline-flex; }
+  .lw-nav-toggle{ display: none; }
+  .lw-mobile-menu{ display: none; }
+}
