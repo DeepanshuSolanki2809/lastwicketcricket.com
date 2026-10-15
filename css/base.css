@@ -1,9 +1,10 @@
 /* ==========================================================================
    LAST WICKET CRICKET — Base
    Reset, typography, focus states, and shared utilities.
+   (Fonts are loaded via <link rel="preconnect"> + <link rel="stylesheet"> in
+   HTML <head> so the browser fetches them in parallel without a blocking
+   CSS @import waterfall.)
    ========================================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
 
 *{ box-sizing: border-box; }
 html{ scroll-behavior: smooth; }
